@@ -5,7 +5,7 @@ import {editAdminValidation} from'./validations/auth.js'
 import { validationResult } from 'express-validator';
 import AdminModel from './Models/Admin.js';
 import bcrypt from 'bcrypt'
-mongoose.connect('mongodb+srv://viva:viva123@cluster0.qvys0rj.mongodb.net/viva-app?retryWrites=true&w=majority')
+mongoose.connect(`${process.env.MONGO_DB_URI}`)
 .then(()=>{
     console.log("DB OK")
 })
