@@ -14,8 +14,12 @@ mongoose.connect(`${process.env.MONGO_DB_URI}`)
 })
 const app=express();
 app.use(express.json())
-
-
+const posts=[{name:"araz",surname:"shikhli"},{name:"araz",surname:"shikhli"}]
+app.get('/auth/posts',async(req,res)=>{
+ res.send({
+    message:"Hello world"
+ })
+})
 app.post('/auth/editadmin',editAdminValidation,async (req,res)=>{
    const errors=validationResult(req);
    if(!errors.isEmpty()){
