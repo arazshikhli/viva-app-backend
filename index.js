@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 const URL=process.env.MONGODB_URI
 console.log(URL)
-mongoose.connect(`${URL}`)
+mongoose.connect(`mongodb+srv://viva:viva123@cluster0.qvys0rj.mongodb.net/viva-app?retryWrites=true&w=majority`)
 .then(()=>{
     console.log("DB OK")
 })
