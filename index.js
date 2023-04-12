@@ -4,8 +4,13 @@ import mongoose from 'mongoose';
 import {editAdminValidation} from'./validations/auth.js'
 import { validationResult } from 'express-validator';
 import AdminModel from './Models/Admin.js';
-import bcrypt from 'bcrypt'
-mongoose.connect(`${process.env.MONGO_DB_URI}`)
+import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+
+dotenv.config()
+const URL=process.env.MONGODB_URI
+console.log(URL)
+mongoose.connect(`${URL}`)
 .then(()=>{
     console.log("DB OK")
 })
