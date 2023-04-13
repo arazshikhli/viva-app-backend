@@ -20,12 +20,12 @@ mongoose.connect(`mongodb+srv://viva:viva123@cluster0.qvys0rj.mongodb.net/viva-a
 })
 const app=express();
 app.use(express.json())
-// const posts=[{name:"araz",surname:"shikhli"},{name:"araz",surname:"shikhli"}]
-// app.get('/auth/posts',async(req,res)=>{
-//  res.send({
-//     message:"Hello world"
-//  })
-// })
+const posts=[{name:"araz",surname:"shikhli"},{name:"araz",surname:"shikhli"}]
+app.get('/auth/posts',async(req,res)=>{
+ res.send({
+    message:"Hello world"
+ })
+})
 app.post('/auth/editadmin',editAdminValidation,async (req,res)=>{
 try {
     const errors=validationResult(req);
